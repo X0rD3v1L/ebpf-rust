@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # block-http-requests
 
 ## Prerequisites
@@ -30,3 +31,6 @@ cargo xtask build
 ```bash
 RUST_LOG=info cargo xtask run
 ```
+=======
+# ebpf-rust
+>>>>>>> origin/main
