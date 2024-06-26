@@ -1,0 +1,21 @@
+[package]
+name = "block-http-requests"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+aya = "0.12"
+aya-log = "0.2"
+clap = { version = "4.1", features = ["derive"] }
+block-http-requests-common = { path = "../block-http-requests-common", features = ["user"] }
+anyhow = "1"
+env_logger = "0.10"
+libc = "0.2"
+log = "0.4"
+simplelog = "0.12"
+tokio = { version = "1.25", features = ["macros", "rt", "rt-multi-thread", "net", "signal"] }
+
+[[bin]]
+name = "block-http-requests"
+path = "src/main.rs"

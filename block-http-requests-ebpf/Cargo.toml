@@ -1,0 +1,34 @@
+[package]
+name = "block-http-requests-ebpf"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aya-ebpf = "0.1.0"
+aya-log-ebpf = "0.1.0"
+block-http-requests-common = { path = "../block-http-requests-common" }
+network-types = "0.0.6"
+memoffset = "0.9.1"
+
+[[bin]]
+name = "block-http-requests"
+path = "src/main.rs"
+
+[profile.dev]
+opt-level = 3
+debug = false
+debug-assertions = false
+overflow-checks = false
+lto = true
+panic = "abort"
+incremental = false
+codegen-units = 1
+rpath = false
+
+[profile.release]
+lto = true
+panic = "abort"
+codegen-units = 1
+
+[workspace]
+members = []
